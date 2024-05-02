@@ -1,31 +1,39 @@
+#include <cmath>
 #include <iostream>
-#include <iomanip>
+#include <math.h>
+#include <stdio.h>
 
 using namespace std;
 
-int main( ){
-    const int size = 10;
+int main() {
 
-    cout << setw(4) << " ";
+  int ArmstrongNr, ArmstrongNrA = 0, ArmstrongNrB = 0, ArmstrongNrC = 0;
+  int A = 0, B = 0;
 
-        for(int i = 1; i <= size; ++i){
+  cout << "Enter a number with three digits : " << endl;
+  cin >> ArmstrongNr;
 
-            cout << setw(4) << i;
-        }
-    cout << endl;
+ 
+    A = ArmstrongNr % 100;
+    ArmstrongNrA = (ArmstrongNr - A) / 100;
+     
+    B = A % 10;
+    ArmstrongNrB = (A - B) / 10;
 
-        for(int row = 1; row <= size; ++row){
-
-            cout << setw(4) << row;
-
-            for(int col = 1; col <= size; ++col){
-                
-                cout << setw(4) << row * col;
-            }
-
-            cout << endl;
-        }
+    ArmstrongNrC = B ;
 
 
-    return 0;
+
+  
+
+
+  if (ArmstrongNr == pow(ArmstrongNrA, 3) + pow(ArmstrongNrB, 3) +
+                         pow(ArmstrongNrC, 3) ) {
+
+    cout << "the nr: " << ArmstrongNr << " is perfect number " << endl;
+  } else {
+    cout << "the nr: " << ArmstrongNr << " is not a perfect number " << endl;
+  }
+
+  return 0;
 }
