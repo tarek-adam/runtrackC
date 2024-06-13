@@ -1,0 +1,20 @@
+// Contact.hpp
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+#include <string>
+using namespace std;
+
+class Contact {
+private:
+    string nom;
+    int numero;
+
+public:
+    Contact(string nom, int numero) : nom(nom), numero(numero) {}
+    Contact(const Contact& autre) : nom(autre.nom), numero(autre.numero) {}
+    void afficherContact();
+    void modifierNumero(int nouveauNumero);
+};
+
+#endif
